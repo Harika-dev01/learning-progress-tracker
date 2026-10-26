@@ -11,7 +11,7 @@ import com.learningtracker.progress_service.dto.UpdateProgressRequest;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/progress")
+@GetMapping("/details/{studentId}")
 public class ProgressController {
 
     private final ProgressService progressService;
@@ -28,15 +28,6 @@ public class ProgressController {
                 progressService.enrollStudent(request)
         );
     }
-
-    /*@GetMapping("/student/{studentId}")
-    public ResponseEntity<List<Progress>> getStudentProgress(
-            @PathVariable Long studentId) {
-
-        return ResponseEntity.ok(
-                progressService.getStudentProgress(studentId)
-        );
-    }*/
     
     @GetMapping("/details/{studentId}")
     public ResponseEntity<ProgressResponse>

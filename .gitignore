@@ -16,3 +16,6 @@ Thumbs.db
 # Environment and secret files
 .env
 *.secret
+
+# Local Kubernetes credentials
+kubernetes/mysql-secret.yaml

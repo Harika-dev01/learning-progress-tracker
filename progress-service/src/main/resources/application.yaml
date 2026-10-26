@@ -1,21 +1,22 @@
 server:
-  port: 8082
+  port: ${SERVER_PORT:8082}
 
 spring:
   application:
     name: progress-service
 
   datasource:
-    url: jdbc:mysql://localhost:3306/progress_db
-    username: learninguser
-    password: learningpass
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/progress_db}
+    username: ${SPRING_DATASOURCE_USERNAME:learninguser}
+    password: ${SPRING_DATASOURCE_PASSWORD:learningpass}
 
   jpa:
     hibernate:
       ddl-auto: update
-
     show-sql: true
-
     properties:
       hibernate:
         format_sql: true
+
+course-service:
+  base-url: ${COURSE_SERVICE_URL:http://localhost:8081}
